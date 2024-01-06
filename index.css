@@ -147,7 +147,7 @@ body {
     width: 100%;
 }
 
-#mainContainerSlider #mainContainerSliderRightBottom div .button {
+#mainContainerSlider #mainContainerSliderRightBottom div .buttomChangeCard {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -161,7 +161,7 @@ body {
     border-radius: 50px;
 }
 
-#mainContainerSlider #mainContainerSliderRightBottom div .button:hover {
+#mainContainerSlider #mainContainerSliderRightBottom div .buttomChangeCard:hover {
     cursor: pointer;
     scale: 1.05;
 }

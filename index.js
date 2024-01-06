@@ -5,6 +5,8 @@ const mainSliderTitle = document.getElementById('mainSliderTitle');
 const mainSliderDescription =  document.getElementById('mainSliderDescription');
 const moreInfoButtom = document.getElementById('moreInfoButtom');
 const mainContainerSliderLeft = document.getElementById('mainContainerSliderLeft');
+const passButtomLeft = document.getElementById('passButtomLeft');
+const passButtomRight = document.getElementById('passButtomRight');
 const lista = [];
 
 
@@ -27,6 +29,7 @@ async function iniciar(URLData) {
             objeto.classList.add(`${i == 0 ? 'active' : 'hover'}`);
             objeto.innerText =  `${i + 1}`;
             mainContainerSliderLeft.appendChild(objeto);
+            buttomChangeCard = document.getElementsByClassName('buttomChangeCard');
         }
 
 
@@ -47,6 +50,34 @@ async function iniciar(URLData) {
                 }
             });
         }
+
+
+        function definirNuevo(accion) {
+            const bActive = Number(document.querySelector('.active').getAttribute('id').substring(17, 18)) - 1;
+            idN = Number(bActive);
+            if(accion == '-') {
+                if((idN -1) < 0) {
+                    return 8;
+                } else {
+                    return idN - 1;
+                }
+            } else if(accion == '+') {
+                if((idN + 1) > 8) {
+                    return 0;
+                } else {
+                    return idN + 1;
+                }
+            }
+        }
+        
+
+        passButtomLeft.addEventListener('click', function(e) {
+            const izquierdo = definirNuevo('-');
+        });
+
+        passButtomRight.addEventListener('click', function(e) {
+            const derecho = definirNuevo('+');
+        });
     }) 
 }
 
