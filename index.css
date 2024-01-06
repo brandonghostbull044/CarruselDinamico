@@ -1,0 +1,167 @@
+:root {
+    --primaryColor: #1b3b35;
+    --secundaryColor: #003B70;
+    --neutroColor: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+#mainContainerSlider #mainContainerSliderLeft .active {
+    scale: 1.4;
+}
+
+#mainContainerSlider {
+    display: grid;
+    grid-template-areas: 'left rightTop' 'left rightBottom';
+    grid-template-columns: 2fr 23fr;
+    grid-template-rows: 1fr 2fr;
+    width: 100%;
+    height: 100%;
+    background-image: url('http://mayahuel.cide.edu/wp-content/uploads/2024/01/LD_454x709.jpg');
+}
+
+#mainContainerSlider #mainContainerSliderLeft {
+    position: relative;
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainContainerSlider #mainContainerSliderLeft div:first-child {
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background-color: var(--neutroColor);
+    align-self: center;
+}
+
+#mainContainerSlider #mainContainerSliderLeft div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: var(--secundaryColor);
+    color: var(--neutroColor);
+    margin: 25px;
+    z-index: 1;
+}
+
+#mainContainerSlider #mainContainerSliderLeft .hover:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+#mainContainerSlider #mainContainerSliderRightTop {
+    grid-area: rightTop;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainContainerSlider #mainContainerSliderRightTop h1, #mainContainerSlider #mainContainerSliderRightTop p {
+    color: var(--neutroColor);
+    width: fit-content;
+    text-align: center;
+}
+
+#mainContainerSlider #mainContainerSliderRightTop h1 {
+    font-size: 65px;
+}
+
+#mainContainerSlider #mainContainerSliderRightTop p {
+    font-size: 20px;
+    padding: 30px;
+}
+
+#mainContainerSlider #mainContainerSliderRightBottom {
+    grid-area: rightBottom;
+}
+
+#mainContainerSlider #mainContainerSliderRightBottom ul {
+    height: 70%;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#mainContainerSlider #mainContainerSliderRightBottom ul li {
+    width: 400px;
+    height: 80%;
+    margin: 0 50px;
+    background-color: royalblue;
+}
+
+#mainContainerSlider #mainContainerSliderRightBottom div:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+    width: 100%;
+}
+
+#mainContainerSlider #mainContainerSliderRightBottom div:nth-child(2) a {
+    text-decoration: none;}
+
+#mainContainerSlider #mainContainerSliderRightBottom div:nth-child(2) .buttonMore {
+    height: 70%;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    background-color: var(--secundaryColor);
+    color: var(--neutroColor);
+    border-radius: 50px;
+}
+
+#mainContainerSlider #mainContainerSliderRightBottom div:nth-child(2) .buttonMore:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
+
+#mainContainerSlider #mainContainerSliderRightBottom div:last-child {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+    width: 100%;
+}
+
+#mainContainerSlider #mainContainerSliderRightBottom div .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+    width: 100px;
+    height: 40px;
+    background-color: var(--secundaryColor);
+    color: var(--neutroColor);
+    margin: 0 40px;
+    border-radius: 50px;
+}
+
+#mainContainerSlider #mainContainerSliderRightBottom div .button:hover {
+    cursor: pointer;
+    scale: 1.05;
+}
