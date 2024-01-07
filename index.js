@@ -47,7 +47,7 @@ async function iniciar(URLData) {
                     mainContainerSlider.style.backgroundImage = `url(${lista[0].imagenes[e.target.id]})`;
                     mainSliderDescription.innerText = lista[0].descripciones[e.target.id];
                     moreInfoButtom.setAttribute('href', lista[0].links[e.target.id]);
-                    docenteCard.style.backgroundImage = `url(${lista[0].docentes[e.target.id]})`;
+                    docenteCard.style.backgroundImage = `url(${lista[0].cardImages[e.target.id]})`;
                     e.target.classList.add('active');
                 }
             });
@@ -88,7 +88,7 @@ async function iniciar(URLData) {
                     mainContainerSlider.style.backgroundImage = `url(${lista[0].imagenes[leftButtomCounter[izquierdo].id]})`;
                     mainSliderDescription.innerText = lista[0].descripciones[leftButtomCounter[izquierdo].id];
                     moreInfoButtom.setAttribute('href', lista[0].links[leftButtomCounter[izquierdo].id]);
-                    docenteCard.style.backgroundImage = `url(${lista[0].docentes[leftButtomCounter[izquierdo].id]})`;
+                    docenteCard.style.backgroundImage = `url(${lista[0].cardImages[leftButtomCounter[izquierdo].id]})`;
                     leftButtomCounter[izquierdo].classList.add('active');
                 } else {
                     leftButtomCounter[bActive].classList.remove('active');
@@ -99,7 +99,7 @@ async function iniciar(URLData) {
                     mainContainerSlider.style.backgroundImage = `url(${lista[0].imagenes[leftButtomCounter[derecho].id]})`;
                     mainSliderDescription.innerText = lista[0].descripciones[leftButtomCounter[derecho].id];
                     moreInfoButtom.setAttribute('href', lista[0].links[leftButtomCounter[derecho].id]);
-                    docenteCard.style.backgroundImage = `url(${lista[0].docentes[leftButtomCounter[derecho].id]})`;
+                    docenteCard.style.backgroundImage = `url(${lista[0].cardImages[leftButtomCounter[derecho].id]})`;
                     leftButtomCounter[derecho].classList.add('active');
                 }
             });
