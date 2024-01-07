@@ -7,6 +7,7 @@ const moreInfoButtom = document.getElementById('moreInfoButtom');
 const mainContainerSliderLeft = document.getElementById('mainContainerSliderLeft');
 const passButtomLeft = document.getElementById('passButtomLeft');
 const passButtomRight = document.getElementById('passButtomRight');
+const buttomChangeCard = document.getElementsByClassName('buttomChangeCard');
 const lista = [];
 
 
@@ -29,7 +30,6 @@ async function iniciar(URLData) {
             objeto.classList.add(`${i == 0 ? 'active' : 'hover'}`);
             objeto.innerText =  `${i + 1}`;
             mainContainerSliderLeft.appendChild(objeto);
-            buttomChangeCard = document.getElementsByClassName('buttomChangeCard');
         }
 
 
@@ -57,27 +57,49 @@ async function iniciar(URLData) {
             idN = Number(bActive);
             if(accion == '-') {
                 if((idN -1) < 0) {
-                    return 8;
+                    return 7;
                 } else {
                     return idN - 1;
                 }
             } else if(accion == '+') {
-                if((idN + 1) > 8) {
+                if((idN + 1) > 7) {
                     return 0;
                 } else {
                     return idN + 1;
                 }
             }
         }
-        
 
-        passButtomLeft.addEventListener('click', function(e) {
-            const izquierdo = definirNuevo('-');
-        });
 
-        passButtomRight.addEventListener('click', function(e) {
-            const derecho = definirNuevo('+');
-        });
+        for (var i = 0; i < buttomChangeCard.length; i ++) {
+            buttomChangeCard[i]. addEventListener('click', function(e) {
+                const izquierdo = definirNuevo('-');
+                const derecho = definirNuevo('+');
+                const bActive = Number(document.querySelector('.active').getAttribute('id').substring(17, 18)) - 1;
+                if (e.target.id == 'passButtomLeft') {
+                    console.log(leftButtomCounter[bActive]);
+                    leftButtomCounter[bActive].classList.remove('active');
+                    leftButtomCounter[bActive].classList.add('hover');
+
+                    mainContainerSlider.style.backgroundImage = `url(${lista[0].imagenes[leftButtomCounter[izquierdo].id]})`;
+                    mainSliderTitle.innerText = lista[0].titulos[leftButtomCounter[izquierdo].id];
+                    mainContainerSlider.style.backgroundImage = `url(${lista[0].imagenes[leftButtomCounter[izquierdo].id]})`;
+                    mainSliderDescription.innerText = lista[0].descripciones[leftButtomCounter[izquierdo].id];
+                    moreInfoButtom.setAttribute('href', lista[0].links[leftButtomCounter[izquierdo].id]);
+                    leftButtomCounter[izquierdo].classList.add('active');
+                } else {
+                    leftButtomCounter[bActive].classList.remove('active');
+                    leftButtomCounter[bActive].classList.add('hover');
+
+                    mainContainerSlider.style.backgroundImage = `url(${lista[0].imagenes[leftButtomCounter[derecho].id]})`;
+                    mainSliderTitle.innerText = lista[0].titulos[leftButtomCounter[derecho].id];
+                    mainContainerSlider.style.backgroundImage = `url(${lista[0].imagenes[leftButtomCounter[derecho].id]})`;
+                    mainSliderDescription.innerText = lista[0].descripciones[leftButtomCounter[derecho].id];
+                    moreInfoButtom.setAttribute('href', lista[0].links[leftButtomCounter[derecho].id]);
+                    leftButtomCounter[derecho].classList.add('active');
+                }
+            });
+        }
     }) 
 }
 
