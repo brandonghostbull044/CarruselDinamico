@@ -22,7 +22,7 @@ body {
 #mainContainerSlider {
     display: grid;
     grid-template-areas: 'left rightTop' 'left rightBottom';
-    grid-template-columns: 2fr 23fr;
+    grid-template-columns: 10% 90%;
     grid-template-rows: 1fr 2fr;
     width: 100%;
     height: 100%;
@@ -44,20 +44,22 @@ body {
     width: 2px;
     background-color: var(--neutroColor);
     align-self: center;
+    border: none;
 }
 
 #mainContainerSlider #mainContainerSliderLeft div {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
-    width: 50px;
-    height: 50px;
+    font-size: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50px;
-    background-color: var(--secundaryColor);
+    background-color: var(--primaryColor);
     color: var(--neutroColor);
-    margin: 25px;
+    margin: 20px 0;
     z-index: 1;
+    box-shadow: black 5px 5px 12px 1px;
 }
 
 #mainContainerSlider #mainContainerSliderLeft .hover:hover {
@@ -99,13 +101,20 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    border-radius: 50px;
 }
 
 #mainContainerSlider #mainContainerSliderRightBottom ul li {
-    width: 400px;
-    height: 80%;
-    margin: 0 50px;
+    width: 24%;
+    height: 95%;
+    min-width: 350px;
     background-color: royalblue;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50px;
+    box-shadow: black 10px 10px 12px 1px;
+    border: outset;
 }
 
 #mainContainerSlider #mainContainerSliderRightBottom div:nth-child(2) {
@@ -122,15 +131,15 @@ body {
 
 #mainContainerSlider #mainContainerSliderRightBottom div:nth-child(2) .buttonMore {
     height: 70%;
-    width: 200px;
+    width: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    font-weight: bold;
-    background-color: var(--secundaryColor);
+    background-color: var(--primaryColor);
     color: var(--neutroColor);
     border-radius: 50px;
+    box-shadow: black 10px 10px 12px 1px;
 }
 
 #mainContainerSlider #mainContainerSliderRightBottom div:nth-child(2) .buttonMore:hover {
@@ -153,12 +162,13 @@ body {
     align-items: center;
     font-size: 40px;
     font-weight: bold;
-    width: 100px;
+    width: 40px;
     height: 40px;
-    background-color: var(--secundaryColor);
+    background-color: var(--primaryColor);
     color: var(--neutroColor);
     margin: 0 40px;
     border-radius: 50px;
+    box-shadow: black 10px 10px 12px 1px;
 }
 
 #mainContainerSlider #mainContainerSliderRightBottom div .buttomChangeCard:hover {
