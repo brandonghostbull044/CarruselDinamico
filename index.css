@@ -94,7 +94,7 @@ body {
     grid-area: rightBottom;
 }
 
-#mainContainerSlider #mainContainerSliderRightBottom ul {
+#mainContainerSlider #mainContainerSliderRightBottom #flipCardContainer {
     height: 70%;
     width: 100%;
     list-style: none;
@@ -105,11 +105,30 @@ body {
     border-radius: 50px;
 }
 
-#mainContainerSlider #mainContainerSliderRightBottom ul li {
+#mainContainerSlider #mainContainerSliderRightBottom div:first-child #flipCard {
     width: 24%;
     height: 95%;
     min-width: 350px;
-    background-color: royalblue;
+    perspective: 1000px;
+}
+
+#flipCard #flipCardInner {
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+}
+  
+.flipCardFace {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+    border-radius: 16px;
     background-position: center;
     background-size: cover;
     border-radius: 50px;
@@ -117,7 +136,17 @@ body {
     border: outset;
 }
 
-#mainContainerSlider #mainContainerSliderRightBottom div:nth-child(2) {
+#flipCardFront {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#flipCardBack {
+    transform: rotateY(180deg);
+}
+
+#mainContainerSlider #mainContainerSliderRightBottom #moreInfoButtomContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -126,10 +155,10 @@ body {
     width: 100%;
 }
 
-#mainContainerSlider #mainContainerSliderRightBottom div:nth-child(2) a {
+#mainContainerSlider #mainContainerSliderRightBottom #moreInfoButtomContainer a {
     text-decoration: none;}
 
-#mainContainerSlider #mainContainerSliderRightBottom div:nth-child(2) .buttonMore {
+#mainContainerSlider #mainContainerSliderRightBottom #moreInfoButtomContainer .buttonMore {
     height: 70%;
     width: 180px;
     display: flex;
@@ -142,12 +171,12 @@ body {
     box-shadow: black 10px 10px 12px 1px;
 }
 
-#mainContainerSlider #mainContainerSliderRightBottom div:nth-child(2) .buttonMore:hover {
+#mainContainerSlider #mainContainerSliderRightBottom #moreInfoButtomContainer .buttonMore:hover {
     cursor: pointer;
     scale: 1.05;
 }
 
-#mainContainerSlider #mainContainerSliderRightBottom div:last-child {
+#mainContainerSlider #mainContainerSliderRightBottom #buttomChangeCardContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
