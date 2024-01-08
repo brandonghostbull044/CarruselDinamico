@@ -42,9 +42,9 @@ async function iniciar(URLData) {
         lista.push(response);
     })
     .then(() => {
-        for (var i = 0; i < Object.values(lista[0].titulos).length; i++) {
+        for (var i = 0; i < Object.values(lista[0].titles).length; i++) {
             objeto = document.createElement('div');
-            objeto.setAttribute('id', Object.keys(lista[0].titulos)[i]);
+            objeto.setAttribute('id', Object.keys(lista[0].titles)[i]);
             objeto.classList.add('leftButtomCounter');
             objeto.classList.add(`${i == 0 ? 'active' : 'hover'}`);
             objeto.innerText =  `${i + 1}`;
@@ -52,7 +52,7 @@ async function iniciar(URLData) {
         }
 
 
-        for (var i = 0; i < Object.values(lista[0].titulos).length; i++) {
+        for (var i = 0; i < Object.values(lista[0].titles).length; i++) {
             leftButtomCounter[i].addEventListener('click', function(e) {
                 e.target.classList.remove('hover');
                 for(var i = 0; i < leftButtomCounter.length; i++) {
@@ -61,9 +61,9 @@ async function iniciar(URLData) {
                         leftButtomCounter[i].classList.add('hover');
                     }
 
-                    mainContainerSlider.style.backgroundImage = `url(${lista[0].imagenes[e.target.id]})`;
-                    mainSliderTitle.innerText = lista[0].titulos[e.target.id];
-                    mainSliderDescription.innerText = lista[0].descripciones[e.target.id];
+                    mainContainerSlider.style.backgroundImage = `url(${lista[0].backgroundImages[e.target.id]})`;
+                    mainSliderTitle.innerText = lista[0].titles[e.target.id];
+                    mainSliderDescription.innerText = lista[0].descriptions[e.target.id];
                     moreInfoButtom.setAttribute('href', lista[0].links[e.target.id]);
                     e.target.classList.add('active');
                 }
@@ -79,9 +79,9 @@ async function iniciar(URLData) {
                     card.setAttribute('style', `transform: rotateY(${deg}deg);`);
                     leftButtomCounter[bActive].classList.remove('active');
                     leftButtomCounter[bActive].classList.add('hover');
-                    mainContainerSlider.style.backgroundImage = `url(${lista[0].imagenes[leftButtomCounter[izquierdo].id]})`;
-                    mainSliderTitle.innerText = lista[0].titulos[leftButtomCounter[izquierdo].id];
-                    mainSliderDescription.innerText = lista[0].descripciones[leftButtomCounter[izquierdo].id];
+                    mainContainerSlider.style.backgroundImage = `url(${lista[0].backgroundImages[leftButtomCounter[izquierdo].id]})`;
+                    mainSliderTitle.innerText = lista[0].titles[leftButtomCounter[izquierdo].id];
+                    mainSliderDescription.innerText = lista[0].descriptions[leftButtomCounter[izquierdo].id];
                     moreInfoButtom.setAttribute('href', lista[0].links[leftButtomCounter[izquierdo].id]);
                     leftButtomCounter[izquierdo].classList.remove('hover');
                     leftButtomCounter[izquierdo].classList.add('active');
@@ -91,16 +91,16 @@ async function iniciar(URLData) {
                     card.setAttribute('style', `transform: rotateY(${deg}deg);`);
                     leftButtomCounter[bActive].classList.remove('active');
                     leftButtomCounter[bActive].classList.add('hover');
-                    mainContainerSlider.style.backgroundImage = `url(${lista[0].imagenes[leftButtomCounter[derecho].id]})`;
-                    mainSliderTitle.innerText = lista[0].titulos[leftButtomCounter[derecho].id];
-                    mainSliderDescription.innerText = lista[0].descripciones[leftButtomCounter[derecho].id];
+                    mainContainerSlider.style.backgroundImage = `url(${lista[0].backgroundImages[leftButtomCounter[derecho].id]})`;
+                    mainSliderTitle.innerText = lista[0].titles[leftButtomCounter[derecho].id];
+                    mainSliderDescription.innerText = lista[0].descriptions[leftButtomCounter[derecho].id];
                     moreInfoButtom.setAttribute('href', lista[0].links[leftButtomCounter[derecho].id]);
                     leftButtomCounter[derecho].classList.remove('hover');
                     leftButtomCounter[derecho].classList.add('active');
                 }
             });
         }
-    }) 
+    })
 }
 
 iniciar(URLData);
