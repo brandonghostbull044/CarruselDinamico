@@ -51,7 +51,6 @@ async function iniciar(URLData) {
             mainContainerSliderLeft.appendChild(objeto);
         }
 
-
         for (var i = 0; i < Object.values(lista[0].titles).length; i++) {
             leftButtomCounter[i].addEventListener('click', function(e) {
                 e.target.classList.remove('hover');
@@ -100,6 +99,10 @@ async function iniciar(URLData) {
                 }
             });
         }
+        mainContainerSlider.style.backgroundImage = `url(${lista[0].backgroundImages[leftButtomCounter[0].id]})`;
+        mainSliderTitle.innerText = lista[0].titles[leftButtomCounter[0].id];
+        mainSliderDescription.innerText = lista[0].descriptions[leftButtomCounter[0].id];
+        moreInfoButtom.setAttribute('href', lista[0].links[leftButtomCounter[0].id]);
     })
 }
 
