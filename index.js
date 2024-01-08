@@ -13,16 +13,16 @@ const buttom = document.getElementsByClassName('buttom');
 const lista = [];
 var deg = 0;
 
-function definirNuevo(accion) {
-    const bActive = Number(document.querySelector('.active').getAttribute('id').substring(17, 18)) - 1;
+function definirNuevo(accion, Num) {
+    const bActive = Number(document.querySelector('.active').getAttribute('id').substring(17)) - 1;
     if(accion == '-') {
         if((bActive -1) < 0) {
-            return 7;
+            return Num -1;
         } else {
             return bActive - 1;
         }
     } else if(accion == '+') {
-        if((bActive + 1) > 7) {
+        if((bActive + 1) > (Num - 1)) {
             return 0;
         } else {
             return bActive + 1;
@@ -72,9 +72,9 @@ async function iniciar(URLData) {
 
         for (var i = 0; i < buttomChangeCard.length; i ++) {
             buttomChangeCard[i]. addEventListener('click', function(e) {
-                const bActive = Number(document.querySelector('.active').getAttribute('id').substring(17, 18)) - 1;
+                const bActive = Number(document.querySelector('.active').getAttribute('id').substring(17)) - 1;
                 if (e.target.id == 'passButtomLeft') {
-                    const izquierdo = definirNuevo('-');
+                    const izquierdo = definirNuevo('-', leftButtomCounter.length);
                     deg = deg - 180;
                     card.setAttribute('style', `transform: rotateY(${deg}deg);`);
                     leftButtomCounter[bActive].classList.remove('active');
@@ -86,7 +86,7 @@ async function iniciar(URLData) {
                     leftButtomCounter[izquierdo].classList.remove('hover');
                     leftButtomCounter[izquierdo].classList.add('active');
                 } else {
-                    const derecho = definirNuevo('+');
+                    const derecho = definirNuevo('+', leftButtomCounter.length);
                     deg = deg + 180;
                     card.setAttribute('style', `transform: rotateY(${deg}deg);`);
                     leftButtomCounter[bActive].classList.remove('active');
