@@ -72,10 +72,9 @@ async function iniciar(URLData) {
 
         for (var i = 0; i < buttomChangeCard.length; i ++) {
             buttomChangeCard[i]. addEventListener('click', function(e) {
-                const izquierdo = definirNuevo('-');
-                const derecho = definirNuevo('+');
                 const bActive = Number(document.querySelector('.active').getAttribute('id').substring(17, 18)) - 1;
                 if (e.target.id == 'passButtomLeft') {
+                    const izquierdo = definirNuevo('-');
                     deg = deg - 180;
                     card.setAttribute('style', `transform: rotateY(${deg}deg);`);
                     leftButtomCounter[bActive].classList.remove('active');
@@ -84,8 +83,10 @@ async function iniciar(URLData) {
                     mainSliderTitle.innerText = lista[0].titulos[leftButtomCounter[izquierdo].id];
                     mainSliderDescription.innerText = lista[0].descripciones[leftButtomCounter[izquierdo].id];
                     moreInfoButtom.setAttribute('href', lista[0].links[leftButtomCounter[izquierdo].id]);
+                    leftButtomCounter[izquierdo].classList.remove('hover');
                     leftButtomCounter[izquierdo].classList.add('active');
                 } else {
+                    const derecho = definirNuevo('+');
                     deg = deg + 180;
                     card.setAttribute('style', `transform: rotateY(${deg}deg);`);
                     leftButtomCounter[bActive].classList.remove('active');
@@ -94,6 +95,7 @@ async function iniciar(URLData) {
                     mainSliderTitle.innerText = lista[0].titulos[leftButtomCounter[derecho].id];
                     mainSliderDescription.innerText = lista[0].descripciones[leftButtomCounter[derecho].id];
                     moreInfoButtom.setAttribute('href', lista[0].links[leftButtomCounter[derecho].id]);
+                    leftButtomCounter[derecho].classList.remove('hover');
                     leftButtomCounter[derecho].classList.add('active');
                 }
             });
