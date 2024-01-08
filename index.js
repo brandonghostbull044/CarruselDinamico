@@ -13,6 +13,23 @@ const buttom = document.getElementsByClassName('buttom');
 const lista = [];
 var deg = 0;
 
+function definirNuevo(accion) {
+    const bActive = Number(document.querySelector('.active').getAttribute('id').substring(17, 18)) - 1;
+    if(accion == '-') {
+        if((bActive -1) < 0) {
+            return 7;
+        } else {
+            return bActive - 1;
+        }
+    } else if(accion == '+') {
+        if((bActive + 1) > 7) {
+            return 0;
+        } else {
+            return bActive + 1;
+        }
+    }
+}
+
 async function fetchData(url) {
     const response = await fetch(url);
     const data = await response.json();
@@ -52,26 +69,6 @@ async function iniciar(URLData) {
                 }
             });
         }
-
-
-        function definirNuevo(accion) {
-            const bActive = Number(document.querySelector('.active').getAttribute('id').substring(17, 18)) - 1;
-            idN = Number(bActive);
-            if(accion == '-') {
-                if((idN -1) < 0) {
-                    return 7;
-                } else {
-                    return idN - 1;
-                }
-            } else if(accion == '+') {
-                if((idN + 1) > 7) {
-                    return 0;
-                } else {
-                    return idN + 1;
-                }
-            }
-        }
-
 
         for (var i = 0; i < buttomChangeCard.length; i ++) {
             buttomChangeCard[i]. addEventListener('click', function(e) {
