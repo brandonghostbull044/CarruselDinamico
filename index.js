@@ -17,7 +17,6 @@ const moreInfoButtomContainer = document.getElementById('moreInfoButtomContainer
 const mainContainerSliderRightTop = document.getElementById('mainContainerSliderRightTop');
 const lista = [];
 var deg = 0;
-var front = true;
 
 function definirNuevo(accion, Num) {
     const bActive = Number(document.querySelector('.active').getAttribute('id').substring(17)) - 1;
@@ -133,7 +132,7 @@ async function iniciar(URLData) {
             newNodeDiv.setAttribute('id', 'moreInfoButtomContainer');
             newNodeA.setAttribute('target', '_blank');
             newNodeA.setAttribute('id', 'moreInfoButtom');
-            newNodeDiv2.setAttribute('class', 'buttonMore');
+            newNodeDiv2.setAttribute('id', 'buttonMore');
             newNodeDiv2.innerText = 'Read more';
             newNodeDiv.appendChild(newNodeA);
             newNodeA.appendChild(newNodeDiv2);
@@ -141,11 +140,20 @@ async function iniciar(URLData) {
             mainContainerSliderRightBottom.insertBefore(newNodeDiv, buttomChangeCardContainer);
         }
         
+        for (var i = 0; i < leftButtomCounter.length; i++) {
+            leftButtomCounter[i].style.backgroundColor = lista[0].counterColor;
+            if (i < 2) {
+                buttomChangeCard[i].style.backgroundColor = lista[0].buttomChangeColor;
+            }
+        }
         const moreInfoButtom = document.getElementById('moreInfoButtom');
+        const buttonMore = document.getElementById('buttonMore');
         mainContainerSlider.style.backgroundImage = `url(${lista[0].backgroundImages[leftButtomCounter[(lista[0].activeCardNumber - 1)].id]})`;
         mainSliderTitle.innerText = lista[0].titles[leftButtomCounter[(lista[0].activeCardNumber - 1)].id];
         mainSliderDescription.innerText = lista[0].descriptions[leftButtomCounter[(lista[0].activeCardNumber - 1)].id];
         moreInfoButtom.setAttribute('href', lista[0].links[leftButtomCounter[(lista[0].activeCardNumber - 1)].id]);
+        buttonMore.style.backgroundColor = lista[0].buttomColor;
+        buttonMore.innerText = lista[0].buttomText;
         flipCardFront.style.backgroundImage = `url(${lista[0].cardImages[leftButtomCounter[(lista[0].activeCardNumber - 1)].id]})`;
         flipCardBack.style.backgroundColor = lista[0].cardBackBackgroundColor;
         moreInfoButtom.setAttribute('href', lista[0].links[leftButtomCounter[(lista[0].activeCardNumber - 1)].id]);

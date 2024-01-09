@@ -1,6 +1,4 @@
 :root {
-    --primaryColor: #1b3b35;
-    --secundaryColor: #003B70;
     --neutroColor: white;
 }
 
@@ -57,7 +55,6 @@ body {
     width: 30px;
     height: 30px;
     border-radius: 50px;
-    background-color: var(--primaryColor);
     color: var(--neutroColor);
     margin: 20px 0;
     z-index: 1;
@@ -163,20 +160,19 @@ body {
 #moreInfoButtomContainer a {
     text-decoration: none;}
 
-#moreInfoButtomContainer .buttonMore {
+#moreInfoButtomContainer #buttonMore {
     height: 70%;
     width: 215px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 40px;
-    background-color: var(--primaryColor);
     color: var(--neutroColor);
     border-radius: 50px;
     box-shadow: black 10px 10px 12px 1px;
 }
 
-#moreInfoButtomContainer .buttonMore:hover {
+#moreInfoButtomContainer #buttonMore:hover {
     cursor: pointer;
     scale: 1.05;
 }
@@ -198,7 +194,6 @@ body {
     font-weight: bold;
     width: 40px;
     height: 40px;
-    background-color: var(--primaryColor);
     color: var(--neutroColor);
     margin: 0 40px;
     border-radius: 50px;
