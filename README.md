@@ -9,6 +9,7 @@ Un carrusel diferente para tu WEB.
 - Salto entre cartas en bucle
 - Consumo de datos desde archivo .json
 - Responsivo
+- Selleción de las tarjetas desde botones de cambio o botones contadores
 - Desde el archivo .json puedes indicar:
     - La cantidad de tarjetas
     - La tarjeta que estará activa por defecto
